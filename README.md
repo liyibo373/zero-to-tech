@@ -41,3 +41,17 @@ next.config.mjs          ← 空 {}
 ```
 
 相比 4.4，没了 `index.html`、`src/main.jsx`、`src/App.jsx`、`src/router/useRoute.js`——这一坨被 `app/` 取代了。
+
+curl https://api.deepseek.com/chat/completions \
+ -H "Content-Type: application/json" \
+ -H "Authorization: Bearer sk-416c877a3e5f4612b8bf3f0fd8be39a9" \
+ -d '{
+"model": "deepseek-v4-pro",
+"messages": [
+{"role": "system", "content": "You are a helpful assistant."},
+{"role": "user", "content": "请用一句话介绍你自己"}
+],
+"thinking": {"type": "enabled"},
+"reasoning_effort": "high",
+"stream": false
+}'
